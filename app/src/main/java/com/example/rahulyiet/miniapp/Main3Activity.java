@@ -69,7 +69,7 @@ public class Main3Activity extends AppCompatActivity {
             } while (cursor.moveToNext());
 
             ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
-
+             ListView.setAdapter(arrayAdapter);
 
         }
     }

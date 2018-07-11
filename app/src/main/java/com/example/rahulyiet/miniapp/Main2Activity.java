@@ -48,12 +48,14 @@ public class Main2Activity extends AppCompatActivity {
                 if(isSuccessfull){
 
                     Toast.makeText(Main2Activity.this,"Successful storecd",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent (Main2Activity.this,Main3Activity.class);
-                    startActivity(intent);
+
                 }else{
 
                     Toast.makeText(Main2Activity.this,"OnSuccesful",Toast.LENGTH_SHORT).show();
                 }
+
+                Intent intent = new Intent (Main2Activity.this,Main3Activity.class);
+                startActivity(intent);
 
             }
         });

@@ -69,4 +69,27 @@ public class DBClass extends SQLiteOpenHelper {
         db.delete("USER", "Email = ? ", arr);
 
     }
+
+    public Cursor Login(String email, String password) {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select Email,Password,Type,Phone FROM USER WHERE Name=? AND Password=?", new String[]{email, password
+        });
+        return cursor;
+
+
+//
+    }
+    // update Data
+
+       boolean Update (String email){
+        int update;
+        SQLiteDatabase db=getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Email",email);
+        String arr[]={""};
+        arr[0]=email;
+        update=db.update("USER",contentValues,"Email=?",arr);
+        return (update>-1);
+       }
+
 }
